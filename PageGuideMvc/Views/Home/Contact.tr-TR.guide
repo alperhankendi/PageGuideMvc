@@ -1,0 +1,27 @@
+﻿    
+
+var guideContact = {
+        id: 'jQuery.PageGuide',
+        title: 'Örnek page guide',
+        steps: [
+            {
+                target: '.title',
+                content: 'Başlık bilgisi burada yer almaktadır.',
+                direction: 'bottom',
+            },
+			 {
+                target: '.contact1',
+                content: 'İletişim bilgilerine buradan ulaşabilirsiniz.',
+                direction: 'right'
+            },
+			 {
+                target: '.contact2',
+                content: 'İletişim bilgilerine devamı.',
+                direction: 'right'
+            }
+        ]
+    }
+
+  $(document).ready(function () {
+        $.pageguide(guideContact);
+    });

@@ -1,0 +1,38 @@
+﻿    
+
+var guide2 = {
+        id: 'jQuery.PageGuide',
+        title: 'Örnek page guide',
+        steps: [
+            {
+                target: '#registerLink',
+                content: 'Kayıt işlemi buradan yapılır.',
+                direction: 'bottom',
+                margin: { top: 100, bottom: 100 },
+                shadow: true,
+                shadowPadding: '10px',
+                zIndex: null,
+                arrow: {
+                    offsetX: 0,
+                    offsetY: 0
+                }
+            },
+			 {
+                target: '#loginLink',
+                content: 'ikinci satırda çok güzel düzenlemeler var \' test ',
+                direction: 'right'
+            },
+            {
+                target: '.two h5',
+                content: 'ikinci satırda çok güzel düzenlemeler var \' test ',
+                direction: 'right'
+            }
+        ]
+    }
+
+
+  $(document).ready(function () {
+
+        $.pageguide(guide2);
+
+    });
