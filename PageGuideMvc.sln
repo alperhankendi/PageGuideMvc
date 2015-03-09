@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageGuideMvc", "PageGuideMvc\PageGuideMvc.csproj", "{6CF52ACB-FEDB-4295-A74E-FD4A7F4DAE42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageGuide", "PageGuide\PageGuide.csproj", "{420C8835-F5AB-4C8F-B202-F06E0858C983}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6CF52ACB-FEDB-4295-A74E-FD4A7F4DAE42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CF52ACB-FEDB-4295-A74E-FD4A7F4DAE42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CF52ACB-FEDB-4295-A74E-FD4A7F4DAE42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{420C8835-F5AB-4C8F-B202-F06E0858C983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{420C8835-F5AB-4C8F-B202-F06E0858C983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{420C8835-F5AB-4C8F-B202-F06E0858C983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{420C8835-F5AB-4C8F-B202-F06E0858C983}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
