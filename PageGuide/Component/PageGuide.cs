@@ -6,7 +6,7 @@
     using System.Text;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using global::PageGuide.Models;
+    using Models;
     using Newtonsoft.Json;
 
     #endregion
