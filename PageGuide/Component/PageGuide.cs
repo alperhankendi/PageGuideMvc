@@ -2,7 +2,11 @@
 {
     #region Using
 
+    using System;
     using System.Collections.Generic;
+    using System.IO;
+    using System.IO.Pipes;
+    using System.Linq;
     using System.Text;
     using System.Web.Mvc;
     using System.Web.Routing;
@@ -32,7 +36,7 @@
 
         public string Id
         {
-            get { return HtmlAttributes.ContainsKey("id") ? (string) HtmlAttributes["id"] : Name; }
+            get { return HtmlAttributes.ContainsKey("id") ? (string)HtmlAttributes["id"] : Name; }
         }
 
         public string Name { get; set; }
@@ -41,13 +45,19 @@
 
         public string Title { get; set; }
 
+        public string Language { get; set; }
+
         public ViewContext ViewContext { get; private set; }
+
+        public bool UseCustomPage { get; set; }
 
         public MvcHtmlString ToHtmlString()
         {
-            var scriptHtml = new StringBuilder();
-            scriptHtml.Append("<script>");
-            scriptHtml.Append(@"var {0} = {{
+            if (StepCollection.Any() && UseCustomPage == false)
+            {
+                var scriptBuilder = new TagBuilder("script");
+                scriptBuilder.Attributes.Add("type", "text/javascript");
+                scriptBuilder.InnerHtml = @"var {0} = {{
                         id: 'jQuery.PageGuide',
                         title: '{1}',
                         steps: {2}
@@ -55,60 +65,36 @@
                        
                      $(document).ready(function () {{
                            $.pageguide({0});
-                       }});");
+                       }});";
 
-            scriptHtml.Append("</script>");
-            var output = string.Format(scriptHtml.ToString(), Id, Title, JsonConvert.SerializeObject(StepCollection));
-            return MvcHtmlString.Create(output);
+                var output = string.Format(scriptBuilder.ToString(), Id, Title, JsonConvert.SerializeObject(StepCollection));
+                return MvcHtmlString.Create(output);
+            }
 
-            #region old
+            if (UseCustomPage)
+            {
+                if (string.IsNullOrEmpty(Language))
+                {
+                    throw new Exception("Language was not set, If you are using custom guide, you must set langage.");
+                }
 
-            //var routeValueDictionary = ViewContext.RequestContext.RouteData.Values;
-            //var rootUrl = ViewContext.RequestContext.HttpContext.Server.MapPath("~/");
-            //var pathhh = string.Format("{0}/Views/{1}/", rootUrl, routeValueDictionary["controller"]);
+                var routeValueDictionary = ViewContext.RequestContext.RouteData.Values;
+                var rootUrl = ViewContext.RequestContext.HttpContext.Server.MapPath("~/");
+                var path = string.Format("{0}/Views/{1}/", rootUrl, routeValueDictionary["controller"]);
+                var partialViewName = string.Format("{0}{1}.{2}.guide", path, routeValueDictionary["action"], Language);
 
-            //var idPrefix = ViewContext.RouteData.Values["controller"] + "-";
-            //idPrefix = idPrefix.ToLower();
+                if (!File.Exists(partialViewName))
+                {
+                    throw new Exception("Your custom guide was not able to find, please check the path or file.");
+                }
 
-            //var partialViewName = Path.Combine(pathhh, routeValueDictionary["action"].ToString());
+                var builder = new TagBuilder("script");
+                builder.Attributes.Add("type", "text/javascript");
+                builder.InnerHtml = File.ReadAllText(partialViewName);
+                return MvcHtmlString.Create(builder.ToString());
+            }
 
-            //partialViewName = string.Format("{0}{1}.{2}.guide", pathhh, routeValueDictionary["action"], "tr-TR");
-
-            //var content = string.Empty;
-
-            //var builder = new TagBuilder("script");
-            //builder.Attributes.Add("type", "text/javascript");
-            //builder.InnerHtml = File.ReadAllText(partialViewName);
-            //return MvcHtmlString.Create(builder.ToString());
-
-            // string[] arr = null;
-            // if (File.Exists(partialViewName))
-            //     arr = File.ReadAllLines(partialViewName);
-
-            // if (arr != null)
-            // {
-            //     content = arr.Aggregate(content, (current, str) => current + str);
-            // }
-
-            // if (!string.IsNullOrWhiteSpace(content))
-            // {
-            //     var script = @"var test = {\n
-            //             id: 'jQuery.PageGuide',\n
-            //             title: 'Title',\n
-            //             steps: [\n";
-            //     script += content + @"
-            //                 ]\n
-            //             }\n\n
-            //             
-            //           $(document).ready(function () {\n
-            //                 $.pageguide(test);\n
-            //             });\n";
-
-            //     return MvcHtmlString.Create(script);
-            // }
-            // return null;
-
-            #endregion
+            return new MvcHtmlString(string.Empty);
         }
     }
 }

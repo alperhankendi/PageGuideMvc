@@ -1,5 +1,4 @@
-﻿@using PageGuideMvc.Extension
-@{
+﻿ @{
     ViewBag.Title = "Contact";
 }
 
@@ -49,4 +48,4 @@
         Redmond, WA 98052-6399
     </p>
 </section>
-@Html.PageGuide()
+ @Html.PayFlex().PageGuide().UseCustomGuide().SetName("tlyPageGuide").SetLanguage("tr-TR").Raw()

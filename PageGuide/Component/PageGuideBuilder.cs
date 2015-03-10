@@ -42,6 +42,20 @@
             return this;
         }
 
+        public virtual PageGuideBuilder UseCustomGuide()
+        {
+            Component.UseCustomPage = true;
+
+            return this;
+        }
+
+        public virtual PageGuideBuilder SetLanguage(string language)
+        {
+            Component.Language = language;
+
+            return this;
+        }
+
         public PageGuide ToComponent()
         {
             return Component;
@@ -51,5 +65,6 @@
         {
             return ToComponent().ToHtmlString().ToString();
         }
+
     }
 }

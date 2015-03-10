@@ -315,7 +315,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Component\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
