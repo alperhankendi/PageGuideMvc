@@ -1,8 +1,9 @@
-﻿namespace System.Web.Mvc
+﻿namespace PageGuide.Component
 {
     #region Using
 
-    using PageGuide.Models;
+    using System.Web.Mvc;
+    using Models;
 
     #endregion
 

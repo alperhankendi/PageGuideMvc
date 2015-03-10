@@ -1,4 +1,4 @@
-﻿namespace System.Web.Mvc
+﻿namespace PageGuide.Models
 {
     public enum Direction
     {
