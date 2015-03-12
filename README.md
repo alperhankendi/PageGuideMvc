@@ -1,6 +1,6 @@
 # PageGuide Mvc Wrapper
 
-jQuery.PageGuide Brought to you by Grasshoppers dev team.
+jQuery.PageGuide ASP.NET Mvc Brought to you by Grasshoppers dev team.
 
 PageGuideMvc is an interactive visual guide to elements on web pages. 
 Instead of cluttering your interface with static help message, or explanatory text, 
