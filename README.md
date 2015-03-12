@@ -1,4 +1,4 @@
-# PageGuide Mvc Wrapper
+# PageGuideMvc Fluent Wrapper
 
 jQuery.PageGuide ASP.NET Mvc Brought to you by Grasshoppers dev team.
 
