@@ -8,7 +8,7 @@ add a pageguide and let your users learn about new features and functions.
 
 You can dynamically load and unload user guides, fine-tune the positioning of each step, and define event handlers on all parts of the guide (including each step individually) to perform actions in concert with the presentation.
 
-![alt tag](http://rlv.zcache.com.au/funny_kung_fu_grasshopper_stickers-rb51cfd1f1e6240b48b4ddb36ee0fa376_v9waf_8byvr_512.jpg =150)
+![alt tag](http://rlv.zcache.com.au/funny_kung_fu_grasshopper_stickers-rb51cfd1f1e6240b48b4ddb36ee0fa376_v9waf_8byvr_512.jpg =50x50)
 
 ### Version
 1.0.0
