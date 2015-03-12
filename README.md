@@ -40,6 +40,9 @@ Want to contribute? Great!
 [Oğuzhan Soykan]:https://github.com/osoykan 
 
 ### Todo's
+ - multi language supports
+ - read steps from view folder
+  
 
 License
 ----
