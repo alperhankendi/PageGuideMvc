@@ -11,7 +11,7 @@ You can dynamically load and unload user guides, fine-tune the positioning of ea
 ![alt tag](http://rlv.zcache.com.au/funny_kung_fu_grasshopper_stickers-rb51cfd1f1e6240b48b4ddb36ee0fa376_v9waf_8byvr_512.jpg =50x50)
 
 ### Version
-1.0.0
+1.0.3
 
 ### Installation
 To install PageGuideMvc, run the following command in the Package Manager Console
