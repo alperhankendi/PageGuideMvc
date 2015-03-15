@@ -28,7 +28,7 @@
 
     public static class HtmlHelperExtension
     {
-        public static ComponentFactory PayFlex(this HtmlHelper helper)
+        public static ComponentFactory Grasshoppers(this HtmlHelper helper)
         {
             return new ComponentFactory(helper);
         }
