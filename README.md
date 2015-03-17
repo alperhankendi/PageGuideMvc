@@ -39,17 +39,22 @@ Before the coding, define on _Layout page this references;
 
 ```
 
+And Let's coding any view,
 
 ```sh
 @(Html.Grasshoppers()
     .PageGuide()
     .SetName("tlyPageGuide2")
     .SetTitle("Wellcome") 
-        .NewStep(x => x.Content("Selamlar").Target("#tlyPageGuide").Direction(Direction.Top).CreateStep()) 
-        .NewStep(x => x.Content("Hoşçakal").Target(".round").Direction(Direction.Right).CreateStep()) 
-        .NewStep(x => x.Content("Heyy nabıyon ?").Target(".two").Direction(Direction.Top).CreateStep()) 
+        .NewStep(x => x.Content("Hi I'm content").Target("#tlyPageGuide").Direction(Direction.Top).CreateStep()) 
+        .NewStep(x => x.Content("Hi I'm content too").Target(".round").Direction(Direction.Right).CreateStep()) 
+        .NewStep(x => x.Content("Blablablalbalbalbla").Target(".two").Direction(Direction.Top).CreateStep()) 
     .Raw() )
 ```
+
+The point is using every step ends `.CreateStep()` and  defining for html Ids `.Target("#Id")` or class names `.Target(".two")` like this etc...
+
+
 ### Development
 
 Want to contribute? Great!
