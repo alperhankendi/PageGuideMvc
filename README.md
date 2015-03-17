@@ -22,6 +22,24 @@ Nuget Link
 [https://www.nuget.org/packages/PageGuideMvc/] 
 
 ### Usage
+Before the coding, define on _Layout page this references;
+
+```sh
+<head>
+  ...
+  <link href="/path/to/css/pageguide.css" rel="stylesheet">
+  ...
+</head>
+
+<body>
+  ...
+  <script src="/path/to/js/jquery.js"></script>
+  <script src="/path/to/js/jquery.pageguide.js"></script>
+</body>
+
+```
+
+
 ```sh
 @(Html.Grasshoppers()
     .PageGuide()
